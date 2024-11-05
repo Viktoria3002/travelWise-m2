@@ -11,6 +11,7 @@
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
+    "webpack": "^5.88.2",
     "webpack-dev-server": "^4.15.1"
   },
   "scripts": {
@@ -48,9 +49,11 @@
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-react": "^7.25.9",
+    "@types/webpack-dev-server": "^4.7.2",
     "babel-loader": "^9.2.1",
     "html-webpack-plugin": "^5.5.3",
-    "webpack": "^5.96.1",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.2.2",
     "webpack-cli": "^5.1.4"
   }
 }
