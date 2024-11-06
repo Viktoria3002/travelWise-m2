@@ -11,10 +11,10 @@
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
-    "webpack": "^5.88.2",
-    "webpack-dev-server": "^4.15.1"
+    "webpack": "^5.88.2"
   },
   "scripts": {
+    "serve": "webpack serve --env mode=development",
     "start": "react-scripts start",
     "build": "webpack",
     "test": "react-scripts test",
@@ -54,6 +54,7 @@
     "html-webpack-plugin": "^5.5.3",
     "ts-loader": "^9.5.0",
     "typescript": "^5.2.2",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   }
 }
