@@ -7,7 +7,7 @@ import plateJpg from '@/assets/plate.jpg';
 import Icon from '@/assets/icon.svg';
 
 //TREE SHAKING
-function TODO() {
+function TODO(a: number) {
   console.log('TODOFUNCTION');
 }
 
@@ -18,7 +18,7 @@ export const App = () => {
     setCount((prev) => prev + 1);
   };
 
-  TODO();
+  TODO(12345);
 
   if (__PLATFORM__ === 'desktop') {
     return <div>ISDESKTOPPLATFORM</div>;
