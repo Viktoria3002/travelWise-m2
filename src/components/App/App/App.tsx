@@ -1,10 +1,15 @@
 import { useState } from 'react';
 import classes from './App.module.scss';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import About from '@/pages/about/About';
 import platePng from '@/assets/plate.png';
 import plateJpg from '@/assets/plate.jpg';
 import Icon from '@/assets/icon.svg';
+
+//TREE SHAKING
+function TODO() {
+  console.log('TODOFUNCTION');
+}
 
 export const App = () => {
   const [count, setCount] = useState<number>(0);
@@ -12,8 +17,24 @@ export const App = () => {
   const increment = () => {
     setCount((prev) => prev + 1);
   };
+
+  TODO();
+
+  if (__PLATFORM__ === 'desktop') {
+    return <div>ISDESKTOPPLATFORM</div>;
+  }
+
+  if (__PLATFORM__ === 'mobile') {
+    return <div>ISMOBILEPLATFORM</div>;
+  }
+
+  // if (__ENV__ === 'development') {
+  //   addDevtools();
+  // }
+
   return (
     <div>
+      <h1>PLATFORM={__PLATFORM__}</h1>
       <div>
         <img width={100} height={100} src={platePng} alt="" />
         <img width={100} height={100} src={plateJpg} alt="" />
