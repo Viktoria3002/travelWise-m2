@@ -13,20 +13,20 @@ export function buildPlugins({ mode, paths, analyzer }: BuildOptions): Configura
 
   if (isDev) {
     plugins.push(new webpack.ProgressPlugin());
-
-    if (isProd) {
-      plugins.push(
-        new MiniCssExtractPlugin({
-          filename: 'css/[name].[contenthash:8].css',
-          chunkFilename: 'css/[name].[contenthash:8].css',
-        }),
-      );
-    }
-
-    if (analyzer) {
-      plugins.push(new BundleAnalyzerPlugin());
-    }
-
-    return plugins;
   }
+
+  if (isProd) {
+    plugins.push(
+      new MiniCssExtractPlugin({
+        filename: 'css/[name].[contenthash:8].css',
+        chunkFilename: 'css/[name].[contenthash:8].css',
+      }),
+    );
+  }
+
+  if (analyzer) {
+    plugins.push(new BundleAnalyzerPlugin());
+  }
+
+  return plugins;
 }
