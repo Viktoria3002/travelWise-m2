@@ -1,4 +1,4 @@
-import { ModuleOptions } from 'webpack';
+import { ModuleOptions, runtime } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/types';
 import ReactRefreshTypeScript from 'react-refresh-typescript';
@@ -68,5 +68,26 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
       },
     ],
   };
-  return [assetLoader, scssLoader, tsLoader, svgrLoader];
+
+  const babelLoader = {
+    test: /\.tsx?$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: [
+          '@babel/preset-env',
+          '@babel/preset-typescript',
+          [
+            '@babel/preset-react',
+            {
+              runtime: isDev ? 'automatic' : 'classic',
+            },
+          ],
+        ],
+      },
+    },
+  };
+
+  return [assetLoader, scssLoader /**tsLoader*/, babelLoader, svgrLoader];
 }
