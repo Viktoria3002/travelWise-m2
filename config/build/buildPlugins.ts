@@ -5,6 +5,7 @@ import { BuildOptions } from './types/types';
 import webpack, { DefinePlugin } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 
 export function buildPlugins({
   mode,
@@ -27,6 +28,7 @@ export function buildPlugins({
     plugins.push(new webpack.ProgressPlugin());
     /** Выносит проверку типов в отдельный процесс не нагружая сборку */
     plugins.push(new ForkTsCheckerWebpackPlugin());
+    plugins.push(new ReactRefreshWebpackPlugin());
   }
 
   if (isProd) {

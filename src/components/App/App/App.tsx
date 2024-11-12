@@ -18,15 +18,15 @@ export const App = () => {
     setCount((prev) => prev + 1);
   };
 
-  TODO(12345);
+  // TODO(12345);
 
-  if (__PLATFORM__ === 'desktop') {
-    return <div>ISDESKTOPPLATFORM</div>;
-  }
+  // if (__PLATFORM__ === 'desktop') {
+  //   return <div>ISDESKTOPPLATFORM</div>;
+  // }
 
-  if (__PLATFORM__ === 'mobile') {
-    return <div>ISMOBILEPLATFORM</div>;
-  }
+  // if (__PLATFORM__ === 'mobile') {
+  //   return <div>ISMOBILEPLATFORM</div>;
+  // }
 
   // if (__ENV__ === 'development') {
   //   addDevtools();
