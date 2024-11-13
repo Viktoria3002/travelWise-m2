@@ -7,15 +7,20 @@ import plateJpg from '@/assets/plate.jpg';
 import Icon from '@/assets/icon.svg';
 
 //TREE SHAKING
-function TODO(a: number) {
-  console.log('TODOFUNCTION');
+function TODO() {
+  TODO2();
+}
+
+function TODO2() {
+  throw new Error();
 }
 
 export const App = () => {
   const [count, setCount] = useState<number>(0);
 
   const increment = () => {
-    setCount((prev) => prev + 1);
+    // setCount((prev) => prev + 1);
+    TODO();
   };
 
   // TODO(12345);
